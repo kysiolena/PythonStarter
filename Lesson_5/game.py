@@ -34,7 +34,7 @@ if __name__ == '__main__':
     while (True):
         is_ready = input('Are you ready to play? (Yes/No)').lower()
 
-        if (is_ready == 'yes'):
+        if is_ready == 'yes':
             print('Let\'s get started!')
 
             # Game process...
@@ -49,7 +49,7 @@ if __name__ == '__main__':
                     # Food group index
                     food_group = int(input(f'What will You eat for {meal}? (0 - fruits; 1 - sweets; 2 - different)'))
 
-                    if (food_group < len(food)):
+                    if food_group < len(food):
                         for index, product in enumerate(food[food_group]):
                             print(f'{product} ({index})')
 
@@ -57,7 +57,7 @@ if __name__ == '__main__':
                             # Food product index
                             food_product = int(input('Select a product by its number...'))
 
-                            if (food_product < len(food[food_group])):
+                            if food_product < len(food[food_group]):
                                 daily_meal += ((weights[food_group], food[food_group][food_product]),)
 
                                 print('Good choice!', food[food_group][food_product], sep=' ')
@@ -79,25 +79,25 @@ if __name__ == '__main__':
             print('Your result:')
             result = daily_meal_named.breakfast[0] + daily_meal_named.lunch[0] + daily_meal_named.dinner[0]
 
-            if (30 >= result <= 40):
-                print('You\'re fit!')
-            elif (41 >= result <= 60):
-                print('You\'re getting there.')
+            if 30 >= result <= 40:
+                print('👍 You\'re fit!')
+            elif 41 >= result <= 60:
+                print('👌 You\'re getting there.')
             else:
-                print('You can do better...')
+                print('👎 You can do better...')
 
             is_repeat = input('Do you want continue game? (Yes/No)').lower()
 
-            if (is_repeat == 'yes'):
+            if is_repeat == 'yes':
                 continue
-            elif (is_repeat == 'no'):
+            elif is_repeat == 'no':
                 print('Ok... Let\'s play another time!')
 
                 # Game end
                 break
             else:
                 print('Sorry, but I don\'t understand you...')
-        elif (is_ready == 'no'):
+        elif is_ready == 'no':
             print('Ok... Let\'s play another time!')
 
             break
