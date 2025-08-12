@@ -46,7 +46,7 @@ if __name__ == '__main__':
                     print('Гостя не запрошено')
 
             case 5:
-                print(f'Загальна кілкьість запрошених гостей {len(guests)}')
+                print(f'Загальна кількість запрошених гостей {len(guests)}')
 
             case 6:
                 print('Bye!')

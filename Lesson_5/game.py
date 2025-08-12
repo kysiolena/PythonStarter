@@ -31,7 +31,7 @@ if __name__ == '__main__':
 
     print('Welcome to The Healthy Food game! 👋')
 
-    while (True):
+    while True:
         is_ready = input('Are you ready to play? (Yes/No)').lower()
 
         if is_ready == 'yes':
@@ -45,15 +45,29 @@ if __name__ == '__main__':
             daily_meal = tuple()
 
             for meal in meals:
-                while (True):
+                while True:
                     # Food group index
                     food_group = int(input(f'What will You eat for {meal}? (0 - fruits; 1 - sweets; 2 - different)'))
 
                     if food_group < len(food):
-                        for index, product in enumerate(food[food_group]):
-                            print(f'{product} ({index})')
+                        # Count of products on the row
+                        PRODUCTS_IN_ROW_COUNT = 10
 
-                        while (True):
+                        # Count of rows
+                        rows_count = round(len(food[food_group]) / PRODUCTS_IN_ROW_COUNT)
+
+                        for row in range(rows_count):
+                            start_index = row * (PRODUCTS_IN_ROW_COUNT - 1)
+                            end_index = start_index + (PRODUCTS_IN_ROW_COUNT - 1)
+                            products_in_row = food[food_group][start_index:end_index]
+
+                            products_in_row_str = ''
+                            for index, product in enumerate(products_in_row):
+                                products_in_row_str += f'| {product} ({start_index + index}) '
+
+                            print(products_in_row_str)
+
+                        while True:
                             # Food product index
                             food_product = int(input('Select a product by its number...'))
 
@@ -76,8 +90,9 @@ if __name__ == '__main__':
             print('Your daily meal:')
             print(daily_meal_named.breakfast[1], daily_meal_named.lunch[1], daily_meal_named.dinner[1], sep=' | ')
 
-            print('Your result:')
             result = daily_meal_named.breakfast[0] + daily_meal_named.lunch[0] + daily_meal_named.dinner[0]
+
+            print(f'Your result: {result}')
 
             if 30 >= result <= 40:
                 print('👍 You\'re fit!')
