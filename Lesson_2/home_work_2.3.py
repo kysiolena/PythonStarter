@@ -5,9 +5,9 @@ b = int(input('Type number B:'))
 c = int(input('Type number C:'))
 
 discriminant = b ** 2 - 4 * a * c
-discriminant_sqr = discriminant ** 0.5
+discriminant_sqrt = discriminant ** 0.5
 
-x_1 = (-b + discriminant_sqr) / (2 * a)
-x_2 = (-b - discriminant_sqr) / (2 * a)
+x_1 = (-b + discriminant_sqrt) / (2 * a)
+x_2 = (-b - discriminant_sqrt) / (2 * a)
 
 print(x_1, x_2)
