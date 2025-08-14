@@ -7,10 +7,7 @@ while True:
     if len(numbers_tuple) < MIN_NUMBERS_COUNT:
         print('Must be at least 5 digits.')
     else:
-        sum_numbers = 0
-        for number in numbers_tuple:
-            sum_numbers += number
-
+        sum_numbers = sum(numbers_tuple)
         second_number = numbers_tuple[1]
         penultimate_number = numbers_tuple[-2:-1][0]  # numbers_tuple[len(numbers_tuple) - 2]
         arithmetic_mean_numbers = sum_numbers / len(numbers_tuple)
