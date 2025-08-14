@@ -1,4 +1,5 @@
 import time
+from functools import reduce
 
 min_number = 1
 max_number = 100
@@ -34,4 +35,12 @@ for num in range(min_number, max_number + 1):
             list_prime_numbers.append(num)
 
 print(list_prime_numbers)
-print(time.time() - start_time)
+# print(time.time() - start_time)
+
+operation_sum = input('Do you want to get the sum of these numbers? (Yes/No)')
+if operation_sum.lower() == 'yes':
+    print(sum(list_prime_numbers))
+
+operation_product = input('Do you want to get the product of these numbers? (Yes/No)')
+if operation_sum.lower() == 'yes':
+    print(reduce(lambda a, b: a * b, list_prime_numbers))

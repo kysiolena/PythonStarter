@@ -21,6 +21,10 @@ for list_index in range(2):
             else:
                 continue
 
+print('Origin')
+print(lists[0], lists[1])
+print('*' * 10)
+
 lists_unique = []
 for list_x_index, list_x in enumerate(lists):
     lists_unique.append([])
@@ -32,7 +36,8 @@ for list_x_index, list_x in enumerate(lists):
 lists_unique_1: list = lists_unique[0] + list(filter(lambda x: x not in lists_unique[0], lists_unique[1]))
 lists_unique_2: list = lists_unique[1] + list(filter(lambda x: x not in lists_unique[1], lists_unique[0]))
 
-print(lists_unique_1, lists_unique_2, sep='\n')
+print('Unique')
+print(lists_unique_1, lists_unique_2)
 print('*' * 10)
 
 # lists_unique_1.reverse()
@@ -40,17 +45,20 @@ print('*' * 10)
 lists_unique_reversed_1 = lists_unique_1[::-1]
 lists_unique_reversed_2 = lists_unique_2[::-1]
 
-print(lists_unique_reversed_1, lists_unique_reversed_2, sep='\n')
+print('Reversed')
+print(lists_unique_reversed_1, lists_unique_reversed_2)
 print('*' * 10)
 
 lists_unique_1.sort()
 lists_unique_2.sort()
 
-print(lists_unique_1, lists_unique_2, sep='\n')
+print('Sorted')
+print(lists_unique_1, lists_unique_2)
 print('*' * 10)
 
 lists_unique_1.sort(reverse=True)
 lists_unique_2.sort(reverse=True)
 
-print(lists_unique_1, lists_unique_2, sep='\n')
+print('Sorted reverse')
+print(lists_unique_1, lists_unique_2)
 print('*' * 10)
