@@ -3,6 +3,19 @@ import math
 from Lesson_8.calculator import is_numeric
 
 
+def is_numeric(string: str) -> bool:
+    """ Check numeric string """
+    # Try to convert the string to a float
+    # If the conversion is successful, return True
+    try:
+        float(string)
+        return True
+    # If a ValueError is thrown, it means the conversion was not successful
+    # This happens when the string contains non-numeric characters
+    except ValueError:
+        return False
+
+
 def exponentiation(number: int | float, power: int | float) -> int | float:
     """ Зведення в ступінь """
     if not is_numeric(str(number)) or not is_numeric(str(power)):

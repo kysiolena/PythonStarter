@@ -1,7 +1,6 @@
 import math
 
-from Lesson_10.calculator import exponentiation, square_root, cube_root
-from Lesson_8.calculator import is_numeric
+from Lesson_10.calculator import is_numeric, exponentiation, square_root, cube_root
 
 CALCULATE_ACTIONS = {
     1: {
